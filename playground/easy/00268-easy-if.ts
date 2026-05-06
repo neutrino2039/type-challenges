@@ -19,7 +19,12 @@
 
 /* _____________ Your Code Here _____________ */
 
-type If<C, T, F> = any
+type If<C extends boolean, T, F> =
+     C extends true
+       ? T
+       : C extends false
+         ? F
+         : never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
