@@ -22,7 +22,9 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Length<T> = any
+type Length<T extends readonly unknown[]> = T['length']
+
+type Test = Length<typeof tesla>
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
