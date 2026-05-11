@@ -30,7 +30,7 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyOmit<T, K> = any
+type MyOmit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
